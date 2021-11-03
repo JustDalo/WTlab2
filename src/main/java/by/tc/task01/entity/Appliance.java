@@ -1,5 +1,12 @@
 package by.tc.task01.entity;
 
 public class Appliance {
-	// you may add your own code here
+	private float cost;
+
+	public float getCost() {
+	    return this.cost;
+    }
+    public void setCost(float cost) {
+	    this.cost = cost;
+    }
 }
