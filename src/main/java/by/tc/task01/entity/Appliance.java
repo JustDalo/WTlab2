@@ -1,12 +1,12 @@
 package by.tc.task01.entity;
 
 public class Appliance {
-	private float cost;
+	private int cost;
 
-	public float getCost() {
+	public int getCost() {
 	    return this.cost;
     }
-    public void setCost(float cost) {
+    public void setCost(int cost) {
 	    this.cost = cost;
     }
 }
