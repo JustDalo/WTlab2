@@ -10,12 +10,10 @@ public final class ServiceFactory {
 	private ServiceFactory() {}
 
 	public ApplianceService getApplianceService() {
-
 		return applianceService;
 	}
 
 	public static ServiceFactory getInstance() {
 		return instance;
 	}
-
 }
