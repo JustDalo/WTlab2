@@ -1,7 +1,13 @@
 package by.tc.task01.entity.criteria;
 
 public final class SearchCriteria {
-	
+
+	public static enum Kettle{
+		POWER_CONSUMPTION, WEIGHT, CAPACITY;
+		public static String getApplianceGroup() {
+			return "Kettle";
+		}
+	}
 	public static enum Oven{
 		POWER_CONSUMPTION, WEIGHT, CAPACITY, DEPTH, HEIGHT, WIDTH
 	}
