@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<appliances>
+    <Kettle>
+        <cost>100</cost>
+        <powerConsumption>450</powerConsumption>
+        <weight>3</weight>
+        <capacity>3</capacity>
+    </Kettle>
+    <Kettle>
+        <cost>125</cost>
+        <powerConsumption>350</powerConsumption>
+        <weight>2</weight>
+        <capacity>2</capacity>
+    </Kettle>
+</appliances>
