@@ -28,4 +28,15 @@ public class Kettle extends Appliance {
     public void setCapacity(int capacity) {
         this.capacity = capacity;
     }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("Kettle {");
+        sb.append("cost = ").append(super.getCost());
+        sb.append(", powerConsumption = ").append(powerConsumption);
+        sb.append(", weight = ").append(weight);
+        sb.append(", capacity = ").append(capacity);
+        sb.append('}');
+        return sb.toString();
+    }
 }
