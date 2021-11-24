@@ -5,8 +5,8 @@ public class Refrigerator extends Appliance{
 	private int weight;
     private int freezerCapacity;
     private int overallCapacity;
-    private int height;
-    private int width;
+    private float height;
+    private float width;
 
     public int getPowerConsumption() {
         return powerConsumption;
@@ -39,20 +39,34 @@ public class Refrigerator extends Appliance{
         this.overallCapacity = overallCapacity;
     }
 
-    public int getHeight() {
+    public float getHeight() {
         return height;
     }
 
-    public void setHeight(int height) {
+    public void setHeight(float height) {
         this.height = height;
     }
 
-    public int getWidth() {
+    public float getWidth() {
         return width;
     }
 
-    public void setWidth(int width) {
+    public void setWidth(float width) {
         this.width = width;
+    }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("Refrigerator {");
+        sb.append("cost = ").append(super.getCost());
+        sb.append(", powerConsumption = ").append(powerConsumption);
+        sb.append(", weight = ").append(weight);
+        sb.append(", freezerCapacity = ").append(freezerCapacity);
+        sb.append(", overallCapacity = ").append(overallCapacity);
+        sb.append(", height = ").append(height);
+        sb.append(", width = ").append(width);
+        sb.append('}');
+        return sb.toString();
     }
 
 }

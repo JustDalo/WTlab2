@@ -55,4 +55,18 @@ public class Oven extends Appliance{
     public void setWidth(float width) {
         this.width = width;
     }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("Oven {");
+        sb.append("cost = ").append(super.getCost());
+        sb.append(", powerConsumption = ").append(powerConsumption);
+        sb.append(", weight = ").append(weight);
+        sb.append(", capacity = ").append(capacity);
+        sb.append(", depth = ").append(depth);
+        sb.append(", height = ").append(height);
+        sb.append(", width = ").append(width);
+        sb.append('}');
+        return sb.toString();
+    }
 }

@@ -7,7 +7,7 @@ public class TabletPC extends Appliance{
     private int displayInches;
     private int memoryRom;
     private int flashMemoryCapacity;
-    private Color color;
+    private String color;
 
     public int getBatteryCapacity() {
         return batteryCapacity;
@@ -33,10 +33,23 @@ public class TabletPC extends Appliance{
     public void setFlashMemoryCapacity(int flashMemoryCapacity) {
         this.flashMemoryCapacity = flashMemoryCapacity;
     }
-    public Color getColor() {
+    public String getColor() {
         return color;
     }
-    public void setColor(Color color) {
+    public void setColor(String color) {
         this.color = color;
+    }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("TabletPC {");
+        sb.append("cost = ").append(super.getCost());
+        sb.append(", batteryCapacity = ").append(batteryCapacity);
+        sb.append(", displayInches = ").append(displayInches);
+        sb.append(", memoryRom = ").append(memoryRom);
+        sb.append(", flashMemoryCapacity = ").append(flashMemoryCapacity);
+        sb.append(", color = ").append(color);
+        sb.append('}');
+        return sb.toString();
     }
 }

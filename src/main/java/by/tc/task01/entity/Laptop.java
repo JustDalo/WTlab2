@@ -2,10 +2,11 @@ package by.tc.task01.entity;
 
 public class Laptop extends Appliance{
 	private float batteryCapacity;
+	private String operationSystem;
 	private int memoryROM;
 	private int systemMemory;
-	private float CPU;
-	private int displayInchs;
+	private float cpu;
+	private int displayInches;
 
 	public float getBatteryCapacity() {
 		return batteryCapacity;
@@ -13,6 +14,14 @@ public class Laptop extends Appliance{
 
 	public void setBatteryCapacity(float batteryCapacity) {
 		this.batteryCapacity = batteryCapacity;
+	}
+
+	public String getOperationSystem() {
+		return operationSystem;
+	}
+
+	public void setOperationSystem(String operationSystem) {
+		this.operationSystem = operationSystem;
 	}
 
 	public int getMemoryROM() {
@@ -31,19 +40,33 @@ public class Laptop extends Appliance{
 		this.systemMemory = systemMemory;
 	}
 
-	public float getCPU() {
-		return CPU;
+	public float getCpu() {
+		return cpu;
 	}
 
-	public void setCPU(float CPU) {
-		this.CPU = CPU;
+	public void setCpu(float cpu) {
+		this.cpu = cpu;
 	}
 
-	public int getDisplayInchs() {
-		return displayInchs;
+	public int getDisplayInches() {
+		return displayInches;
 	}
 
-	public void setDisplayInchs(int displayInchs) {
-		this.displayInchs = displayInchs;
+	public void setDisplayInches(int displayInches) {
+		this.displayInches = displayInches;
+	}
+
+	@Override
+	public String toString() {
+		final StringBuilder sb = new StringBuilder("Laptop {");
+		sb.append("cost = ").append(super.getCost());
+		sb.append(", batteryCapacity = ").append(batteryCapacity);
+		sb.append(", os = ").append(operationSystem);
+		sb.append(", memoryRom = ").append(memoryROM);
+		sb.append(", systemMemory = ").append(systemMemory);
+		sb.append(", cpu = ").append(cpu);
+		sb.append(", displayInches = ").append(displayInches);
+		sb.append('}');
+		return sb.toString();
 	}
 }
