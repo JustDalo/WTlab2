@@ -9,4 +9,6 @@ import java.util.List;
 public interface ApplianceService {	
 	
 	List<Appliance> find(Criteria criteria);
+
+	List<Appliance> findApplianceWithMinCost(Comparator<Appliance> comparator);
 }

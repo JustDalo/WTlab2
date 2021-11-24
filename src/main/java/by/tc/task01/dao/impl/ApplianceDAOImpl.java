@@ -70,6 +70,38 @@ public class ApplianceDAOImpl implements ApplianceDAO{
 		return null;
 	}
 
+	public List<Appliance> getAll(){
+		File xmlFile = new File("src/main/resources/appliances_db.xml");
+		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+		DocumentBuilder builder;
+		try {
+			builder = factory.newDocumentBuilder();
+			Document document = builder.parse(xmlFile);
+			document.getDocumentElement().normalize();
+			Node node = document.getDocumentElement();
+			List<Appliance> appliances = new ArrayList<Appliance>();
+			node = node.getChildNodes().item(1);
+			while (node!=null){
+				if (!node.getNodeName().equals("#text")) {
+					NodeList nodeList = node.getChildNodes();
+					ArrayList<String> parameters = new ArrayList<String>();
+					parameters.add(node.getNodeName());
+					for (int i = 0; i < nodeList.getLength(); i++) {
+						if (!nodeList.item(i).getNodeName().equals("#text")) {
+							parameters.add(getTagValue(nodeList.item(i).getNodeName(),(Element)node));
+						}
+					}
+					appliances.add(applianceFactory.getAppliance(node.getNodeName(), parameters));
+				}
+				node = node.getNextSibling();
+			}
+			return appliances;
+		} catch (Exception exc) {
+			exc.printStackTrace();
+		}
+		return null;
+	}
+
 	private static String getTagValue(String tag, Element element) {
 		NodeList nodeList = element.getElementsByTagName(tag).item(0).getChildNodes();
 		Node node = (Node) nodeList.item(0);

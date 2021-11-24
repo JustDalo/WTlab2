@@ -7,6 +7,8 @@ import by.tc.task01.entity.criteria.Criteria;
 import by.tc.task01.service.ApplianceService;
 import by.tc.task01.service.validation.Validator;
 
+import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class ApplianceServiceImpl implements ApplianceService{
@@ -22,5 +24,29 @@ public class ApplianceServiceImpl implements ApplianceService{
 		List<Appliance> appliance = applianceDAO.find(criteria);
 
 		return appliance;
+	}
+
+	public List<Appliance> findApplianceWithMinCost(Comparator<Appliance> comparator){
+		DAOFactory factory = DAOFactory.getInstance();
+		ApplianceDAO applianceDAO = factory.getApplianceDAO();
+		List<Appliance> appliances = applianceDAO.getAll();
+		appliances.sort(comparator);
+
+		return getAppliancesWithMinCost(appliances);
+	}
+
+
+
+	private List<Appliance> getAppliancesWithMinCost(List<Appliance> appliances) {
+		List<Appliance> appliancesWithMinCost = new ArrayList<>();
+		Appliance appliance = appliances.get(0);
+		float minimalCost = appliance.getCost();
+		int i = 1;
+		while (appliance.getCost() == minimalCost) {
+			appliancesWithMinCost.add(appliance);
+			appliance = appliances.get(i);
+			i++;
+		}
+		return appliancesWithMinCost;
 	}
 }

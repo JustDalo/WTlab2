@@ -7,4 +7,6 @@ import java.util.List;
 
 public interface ApplianceDAO {
 	List<Appliance> find(Criteria criteria);
+
+	List<Appliance> getAll();
 }
