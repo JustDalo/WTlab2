@@ -3,10 +3,10 @@ package by.tc.task01.entity;
 import java.util.ArrayList;
 
 public class ApplianceFactory {
-    public Appliance getAppliance(String applianceGroup, ArrayList<String> infoParameters){
+    public Appliance getAppliance(String applianceGroup, ArrayList<String> infoParameters) {
         Appliance appliance;
         switch (applianceGroup) {
-            case  ("Kettle"):
+            case ("Kettle"):
                 appliance = getKettle(infoParameters);
                 break;
             case ("Laptop"):
@@ -34,7 +34,14 @@ public class ApplianceFactory {
         return appliance;
     }
 
-    private Kettle getKettle(ArrayList<String> infoParameters){
+
+    /**
+     * set kettle criteria
+     *
+     * @param infoParameters list of appliance info from xml file
+     * @return kettle
+     */
+    private Kettle getKettle(ArrayList<String> infoParameters) {
         Kettle kettleInfo = new Kettle();
         kettleInfo.setCost(Integer.parseInt(infoParameters.get(1)));
         kettleInfo.setPowerConsumption(Integer.parseInt(infoParameters.get(2)));
@@ -43,6 +50,12 @@ public class ApplianceFactory {
         return kettleInfo;
     }
 
+    /**
+     * set laptop criteria
+     *
+     * @param infoParameters list of appliance info from xml file
+     * @return leptop
+     */
     private Laptop getLaptop(ArrayList<String> infoParameters) {
         Laptop laptopInfo = new Laptop();
         laptopInfo.setCost(Integer.parseInt(infoParameters.get(1)));
@@ -55,6 +68,12 @@ public class ApplianceFactory {
         return laptopInfo;
     }
 
+    /**
+     * set oven criteria
+     *
+     * @param infoParameters list of appliance info from xml file
+     * @return oven
+     */
     private Oven getOven(ArrayList<String> infoParameters) {
         Oven ovenInfo = new Oven();
         ovenInfo.setCost(Integer.parseInt(infoParameters.get(1)));
@@ -68,6 +87,12 @@ public class ApplianceFactory {
         return ovenInfo;
     }
 
+    /**
+     * set fridge criteria
+     *
+     * @param infoParameters list of appliance info from xml file
+     * @return fridge
+     */
     private Refrigerator getRefrigerator(ArrayList<String> infoParameters) {
         Refrigerator refrigeratorInfo = new Refrigerator();
         refrigeratorInfo.setCost(Integer.parseInt(infoParameters.get(1)));
@@ -80,6 +105,12 @@ public class ApplianceFactory {
         return refrigeratorInfo;
     }
 
+    /**
+     * set speakers criteria
+     *
+     * @param infoParameters list of appliance info from xml file
+     * @return speakers
+     */
     private Speakers getSpeakers(ArrayList<String> infoParameters) {
         Speakers speakersInfo = new Speakers();
         speakersInfo.setCost(Integer.parseInt(infoParameters.get(1)));
@@ -89,6 +120,12 @@ public class ApplianceFactory {
         return speakersInfo;
     }
 
+    /**
+     * set tabletPC criteria
+     *
+     * @param infoParameters list of appliance info from xml file
+     * @return tablePC
+     */
     private TabletPC getTabletPC(ArrayList<String> infoParameters) {
         TabletPC tabletPCInfo = new TabletPC();
         tabletPCInfo.setCost(Integer.parseInt(infoParameters.get(1)));
@@ -100,6 +137,12 @@ public class ApplianceFactory {
         return tabletPCInfo;
     }
 
+    /**
+     * set vacuum cleaner criteria
+     *
+     * @param infoParameters list of appliance info from xml file
+     * @return vacuum cleaner
+     */
     private VacuumCleaner getVacuumCleaner(ArrayList<String> infoParameters) {
         VacuumCleaner vacuumCleanerInfo = new VacuumCleaner();
         vacuumCleanerInfo.setCost(Integer.parseInt(infoParameters.get(1)));

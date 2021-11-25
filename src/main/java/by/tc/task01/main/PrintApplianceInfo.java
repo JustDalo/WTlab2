@@ -5,7 +5,10 @@ import by.tc.task01.entity.Appliance;
 import java.util.List;
 
 public class PrintApplianceInfo {
-	
+
+	/**
+	 * @param appliances list of appliances to print
+	 */
 	public static void print(List<Appliance> appliances) {
 		if (appliances.isEmpty()) {
 			System.out.println("There is no such appliance");
