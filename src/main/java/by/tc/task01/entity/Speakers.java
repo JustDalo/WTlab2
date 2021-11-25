@@ -31,7 +31,7 @@ public class Speakers extends Appliance {
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("VacuumCleaner {");
+        final StringBuilder sb = new StringBuilder("Speakers {");
         sb.append("cost = ").append(super.getCost());
         sb.append(", powerConsumption = ").append(powerConsumption);
         sb.append(", numberOfSpeakers = ").append(numberOfSpeakers);
